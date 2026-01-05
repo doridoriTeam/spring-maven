@@ -15,7 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <org.springframework-version>6.1.13</org.springframework-version>
         <jakarta.servlet-version>6.0.0</jakarta.servlet-version>
-        <lombok.version>1.18.36</lombok.version>
+        <lombok.version>1.18.40</lombok.version>
         <slf4j.version>2.0.13</slf4j.version>
     </properties>
 
@@ -85,6 +85,13 @@
                 <version>3.13.0</version>
                 <configuration>
                     <release>${java.version}</release>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
             <plugin>

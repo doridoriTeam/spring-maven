@@ -1,7 +1,5 @@
 package com.spring.framework.interceptor;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
 import org.springframework.web.method.HandlerMethod;
@@ -10,14 +8,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class AuthenticInterceptor implements HandlerInterceptor {
-
-    private static final Logger log = LoggerFactory.getLogger(AuthenticInterceptor.class);
 
     @Override
     public boolean preHandle(@NonNull HttpServletRequest request, @NonNull HttpServletResponse response, @NonNull Object handler) throws Exception {
-        log.debug("AuthenticInterceptor: preHandle called", request.getRequestURI());
+        log.debug("AuthenticInterceptor: preHandle called - {}", request.getRequestURI());
        
         if(handler instanceof HandlerMethod) {
             HandlerMethod handlerMethod = (HandlerMethod) handler;
