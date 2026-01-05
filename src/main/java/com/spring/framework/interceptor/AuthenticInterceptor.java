@@ -23,6 +23,7 @@ public class AuthenticInterceptor implements HandlerInterceptor {
             String packageName = handlerMethod.getBeanType().getPackageName();
             log.debug("packageName: " + packageName);
             log.debug("methodName: " + methodName);
+            
         }
 
 
