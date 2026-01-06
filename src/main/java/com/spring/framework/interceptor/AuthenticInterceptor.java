@@ -1,5 +1,6 @@
 package com.spring.framework.interceptor;
 
+import org.slf4j.Logger;
 import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
 import org.springframework.web.method.HandlerMethod;
@@ -10,15 +11,16 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 
+//롬북 에러 처리 필요
 @Slf4j
 public class AuthenticInterceptor implements HandlerInterceptor {
+    private final Logger log = org.slf4j.LoggerFactory.getLogger(AuthenticInterceptor.class);
 
     @Override
     public boolean preHandle(@NonNull HttpServletRequest request, @NonNull HttpServletResponse response, @NonNull Object handler) throws Exception {
         log.debug("AuthenticInterceptor: preHandle called - {}", request.getRequestURI());
        
-        if(handler instanceof HandlerMethod) {
-            HandlerMethod handlerMethod = (HandlerMethod) handler;
+        if(handler instanceof HandlerMethod handlerMethod) {
             String methodName = handlerMethod.getMethod().getName();
             String packageName = handlerMethod.getBeanType().getPackageName();
             log.debug("packageName: " + packageName);
