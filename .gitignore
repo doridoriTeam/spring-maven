@@ -1,2 +1,2 @@
-target/
-src/main/resources/spring/context-datasource.xml
+/target/*
+/src/main/resources/spring/context-datasource.xml
