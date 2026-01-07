@@ -1,5 +1,7 @@
 {
     "configurations": [
+        
+
         {
             "type": "java",
             "name": "Spring Boot-DemoApplication<springboot-jsp-jquery>",
