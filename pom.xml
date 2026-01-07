@@ -99,11 +99,11 @@
             <artifactId>mybatis-spring</artifactId>
             <version>3.0.4</version>
         </dependency>
-        
+
     </dependencies>
 
     <build>
-        <finalName>spring-maven</finalName>
+        <finalName>ROOT</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
