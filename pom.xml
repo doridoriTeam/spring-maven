@@ -99,6 +99,13 @@
             <artifactId>mybatis-spring</artifactId>
             <version>3.0.4</version>
         </dependency>
+        
+        <!-- 암호화 -->
+        <dependency>
+            <groupId>org.jasypt</groupId>
+            <artifactId>jasypt-spring31</artifactId>
+            <version>1.9.3</version>
+        </dependency>
 
     </dependencies>
 
