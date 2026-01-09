@@ -6,10 +6,13 @@
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/aop
                            http://www.springframework.org/schema/aop/spring-aop.xsd">
-
-    <!-- System log AOP configuration example -->
     <aop:aspectj-autoproxy/>
 
-    <bean id="sysLogAspect" class="com.spring.aop.SysLogAspect"/>
+    <bean id="sysLogAspect" class="com.springframework.aop.SysLogAspect"/>
 
+    <aop:config>
+        <aop:aspect id="sysLogAround" ref="sysLogAspect">
+            <aop:around method="logAround" pointcut="execution(* com.spring.service..*Impl.*(..))" />
+        </aop:aspect>
+    </aop:config>
 </beans>
