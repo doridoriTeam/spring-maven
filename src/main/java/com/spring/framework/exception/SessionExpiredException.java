@@ -10,7 +10,7 @@ public class SessionExpiredException extends Exception {
         this.message = message;
     }
 
-    public String getMessage() {
+    public String getBizMessage() {
         return this.message;
     }
     

@@ -19,7 +19,7 @@ public class AuthenticInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(@NonNull HttpServletRequest request, @NonNull HttpServletResponse response, @NonNull Object handler) throws Exception {
         log.debug("AuthenticInterceptor: preHandle called - {}", request.getRequestURI());
-       
+        System.out.println("테스트 프리핸들러 진입");
         if(handler instanceof HandlerMethod handlerMethod) {
             String methodName = handlerMethod.getMethod().getName();
             String packageName = handlerMethod.getBeanType().getPackageName();

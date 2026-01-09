@@ -9,6 +9,7 @@ public class HomeController {
     @GetMapping("/")
     public String home(Model model) {
         model.addAttribute("message", "Hello, Spring Boot + JSP + jQuery!");
-        return "index";
+        System.out.println("테스트중");   
+        return "main";
     }
 }

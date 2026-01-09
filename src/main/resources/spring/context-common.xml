@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- Common bean definitions -->
-    <bean id="commonBean" class="com.spring.common.CommonBean">
-        <property name="property" value="value"/>
+    <!-- 패키지 Scan이후 특정 Annotation Bean 생성 -->
+    <context:component-scan base-package="com.spring">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Service" />
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository" />
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+    </context:component-scan>
+
+    <!-- Properties 파일 위치 설정 -->
+    <context:property-placeholder location="classpath*:/properties/application.properties" />
+
+    <!-- Property -->
+    <bean class="com.spring.framework.util.CommonProperties" init-method="init">
+        <property name="location" value="/properties/application.properties" />
     </bean>
 
 </beans>
