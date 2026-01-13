@@ -27,10 +27,12 @@ public class QuartzConfig {
                 String jobGroup = env.getProperty(item + ".jobGroup");
                 String triggerName = env.getProperty(item + ".triggerName");
                 String triggerGroup = env.getProperty(item + ".triggerGroup");
-                
+
                 QuartzDto dto = new QuartzDto(jobName, jobGroup, triggerName, triggerGroup);
                 list.add(dto);
             }
+        }
+        
         return list;
     }
 }
